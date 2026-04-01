@@ -12,4 +12,12 @@
 @use "objects/container";
 @use "objects/section";
 
+@use "components/header";
+@use "components/footer";
+@use "components/hero";
+@use "components/featured";
+@use "components/recipe-card";
+@use "components/recipe-detail";
+@use "components/links";
+
 @use "utilities/helpers";

@@ -1,10 +1,31 @@
+@use "sass:color";
+
 /* Colors */
-$primary-color: #ff0000;
-$secondary-color: #00ff00;
-$tertiary-color: #0000ff;
+$color-background: #0f0f0f;
+$color-text: #f5f0e8;
+$color-primary: #e63946;
+$color-secondary: #f4a261;
+$color-accent: #2a9d8f;
+$color-neon: #ffbe0b;
+$color-white: #fff;
+
+/* Fonts */
+$font-primary: 'Playfair Display', serif;
+$font-secondary: 'Inter', sans-serif;
+
+/* Spacing */
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+$spacing-xl: 8rem;
 
 /* Breakpoints */
 $bp-sm: 480px;
 $bp-md: 768px;
 $bp-lg: 1024px;
 $bp-xl: 1280px;
+
+$container-max-width: 1200px;
+$container-padding: 1.5rem;
+$header-height: 4.5rem;
