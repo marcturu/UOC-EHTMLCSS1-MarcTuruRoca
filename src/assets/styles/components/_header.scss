@@ -9,12 +9,33 @@
   width: 100%;
   z-index: 100;
   padding-block: v.$spacing-sm;
+  --header-fg: 0;
+  --header-opacity: 0;
+
 
   @include m.respond-to(md) {
     // Se calcula la opacidad del header con --header-opacity modificado dinámicamente en JS 
-    background-color: f.color-alpha(v.$color-background, var(--header-opacity, 0));
-    border-bottom: 1px solid f.color-alpha(v.$color-border, var(--header-opacity, 0));
+    background-color: color-mix(
+      in srgb,
+      transparent calc((1 - var(--header-opacity)) * 100%),
+      v.$color-background calc(var(--header-opacity) * 100%)
+    );
+    border-bottom: 1px solid color-mix(
+      in srgb,
+      transparent calc((1 - var(--header-opacity)) * 100%),
+      v.$color-border calc(var(--header-opacity) * 100%)
+    );
     backdrop-filter: blur(calc(var(--header-opacity, 0) * 8px));
+  }
+
+  &__logo,
+  &__nav-link,
+  &__menu-btn {
+    color: color-mix(
+      in srgb,
+      v.$color-text calc((1 - var(--header-fg)) * 100%),
+      v.$color-white calc(var(--header-fg) * 100%)
+    );
   }
 
   &__skip-link {
@@ -49,7 +70,6 @@
     align-items: center;
     gap: v.$spacing-xs;
     text-decoration: none;
-    color: v.$color-text;
     font-family: v.$font-primary;
     font-size: 1.25rem;
     font-weight: 700;
@@ -89,7 +109,6 @@
 
   &__nav-link {
     text-decoration: none;
-    color: v.$color-text;
     font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -164,6 +183,7 @@
     display: none;
     gap: 0;
     border-top: 1px solid v.$color-border;
+    background-color: v.$color-background;
 
     ul {
       max-width: v.$container-max-width;
