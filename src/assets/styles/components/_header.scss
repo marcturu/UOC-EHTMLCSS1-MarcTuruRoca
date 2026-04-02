@@ -9,33 +9,21 @@
   width: 100%;
   z-index: 100;
   padding-block: v.$spacing-sm;
+  color: v.$color-text;
   --header-opacity: 0;
+  --border-opacity: 0;
 
-
-  @include m.respond-to(md) {
-    // Se calcula la opacidad del header con --header-opacity modificado dinámicamente en JS 
-    background-color: color-mix(
-      in srgb,
-      transparent calc((1 - var(--header-opacity)) * 100%),
-      v.$color-background calc(var(--header-opacity) * 100%)
-    );
-    border-bottom: 1px solid color-mix(
-      in srgb,
-      transparent calc((1 - var(--header-opacity)) * 100%),
-      v.$color-border calc(var(--header-opacity) * 100%)
-    );
-    backdrop-filter: blur(calc(var(--header-opacity, 0) * 8px));
-  }
-
-  &__logo,
-  &__nav-link,
-  &__menu-btn {
-    color: color-mix(
-      in srgb,
-      v.$color-text calc((1 - var(--header-fg)) * 100%),
-      v.$color-white calc(var(--header-fg) * 100%)
-    );
-  }
+  background-color: color-mix(
+    in srgb,
+    transparent calc((1 - var(--header-opacity)) * 100%),
+    v.$color-background calc(var(--header-opacity) * 100%)
+  );
+  border-bottom: 1px solid color-mix(
+    in srgb,
+    transparent calc((1 - var(--border-opacity)) * 100%),
+    v.$color-border calc(var(--border-opacity) * 100%)
+  );
+  backdrop-filter: blur(calc(var(--header-opacity, 0) * 8px));
 
   &__skip-link {
     position: absolute;
@@ -69,9 +57,7 @@
     align-items: center;
     gap: v.$spacing-xs;
     text-decoration: none;
-    font-family: v.$font-primary;
-    font-size: 1.25rem;
-    font-weight: 700;
+    transition: transform 0.3s ease;
 
     i {
       color: v.$color-primary;
@@ -79,13 +65,25 @@
     }
 
     &:hover {
-      color: v.$color-primary;
+      transform: scale(1.1);
     }
 
     &:focus-visible {
       outline: 3px solid v.$color-primary;
       outline-offset: 4px;
       border-radius: 2px;
+    }
+  }
+
+  &__logo-img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    &:hover {
+      transform: rotate(360deg);
     }
   }
 
@@ -112,6 +110,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     position: relative;
+    color: v.$color-text;
     padding-block: v.$spacing-xs;
 
     &::after {
@@ -122,7 +121,7 @@
       width: 0;
       height: 2px;
       background-color: v.$color-primary;
-      transition: width 0.3s ease;
+      transition: width 0.45s ease;
     }
 
     &:hover {

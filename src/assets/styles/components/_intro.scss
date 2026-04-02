@@ -19,8 +19,9 @@
   }
 
   &__text {
+    text-align: justify;
     color: v.$color-text-muted;
-    max-width: 600px;
+    max-width: 550px;
     margin-bottom: v.$spacing-lg;
   }
 }
