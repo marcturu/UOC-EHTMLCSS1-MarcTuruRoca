@@ -1,1 +1,55 @@
-// Hi
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+
+.featured {
+  background-color: v.$color-white;
+
+  &__title {
+    margin-bottom: v.$spacing-md;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__cta {
+    text-align: center;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$spacing-xs;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: v.$spacing-xs v.$spacing-sm;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &--primary {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+
+    &:hover {
+      background-color: v.$color-text;
+      color: v.$color-white;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+    }
+  }
+}
