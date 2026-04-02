@@ -1,2 +1,3 @@
-const name = 'world';
-console.log(`Hello ${name}`);
+import { initHeader } from './modules/header.js'
+
+initHeader();

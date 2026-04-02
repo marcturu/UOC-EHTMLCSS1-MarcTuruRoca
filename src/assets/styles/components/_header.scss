@@ -1,1 +1,205 @@
-// Hi
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding-block: v.$spacing-sm;
+
+  @include m.respond-to(md) {
+    // Se calcula la opacidad del header con --header-opacity modificado dinámicamente en JS 
+    background-color: f.color-alpha(v.$color-background, var(--header-opacity, 0));
+    border-bottom: 1px solid f.color-alpha(v.$color-border, var(--header-opacity, 0));
+    backdrop-filter: blur(calc(var(--header-opacity, 0) * 8px));
+  }
+
+  &__skip-link {
+    position: absolute;
+    top: -100%;
+    left: v.$container-padding;
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    padding: v.$spacing-xs v.$spacing-sm;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 200;
+
+    &:focus {
+      top: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: v.$container-max-width;
+    margin-inline: auto;
+    padding-inline: v.$container-padding;
+    height: v.$header-height;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    text-decoration: none;
+    color: v.$color-text;
+    font-family: v.$font-primary;
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    i {
+      color: v.$color-primary;
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      color: v.$color-primary;
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include m.respond-to(md) {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: v.$spacing-sm;
+
+    @include m.respond-to(lg) {
+      gap: v.$spacing-md;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: v.$color-text;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    padding-block: v.$spacing-xs;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: v.$color-primary;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: v.$color-primary;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    &[aria-current="page"] {
+      color: v.$color-primary;
+      font-weight: 700;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 2px solid v.$color-primary;
+    color: v.$color-primary;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: v.$color-primary;
+      color: v.$color-white;
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+    }
+
+    @include m.respond-to(md) {
+      display: none;
+    }
+  }
+
+  &__mobile-nav {
+    display: none;
+    gap: 0;
+    border-top: 1px solid v.$color-border;
+
+    ul {
+      max-width: v.$container-max-width;
+      margin-inline: auto;
+    }
+
+    &--open {
+      display: block;
+    }
+
+    @include m.respond-to(md) {
+      display: none !important;
+    }
+  }
+
+  &__mobile-link {
+    display: block;
+    text-decoration: none;
+    color: v.$color-text;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: v.$spacing-xs v.$spacing-sm;
+    border-bottom: 1px solid v.$color-border;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: v.$color-primary;
+      background-color: v.$color-border;
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+}
+
+

@@ -1,13 +1,15 @@
 @use "sass:color";
 
 /* Colors */
-$color-background: #0f0f0f;
-$color-text: #f5f0e8;
-$color-primary: #e63946;
-$color-secondary: #f4a261;
-$color-accent: #2a9d8f;
-$color-neon: #ffbe0b;
+$color-background: #faf7f2;
+$color-text: #1a1a1a;
+$color-text-muted: #4a4a4a;
+$color-primary: #c1121f;
+$color-secondary: #d4721a;
+$color-accent: #1a6b5e;
+$color-highlight: #c9a820;
 $color-white: #fff;
+$color-border: #e0d9ce;
 
 /* Fonts */
 $font-primary: 'Playfair Display', serif;
@@ -28,4 +30,4 @@ $bp-xl: 1280px;
 
 $container-max-width: 1200px;
 $container-padding: 1.5rem;
-$header-height: 4.5rem;
+$header-height: 3.5rem;
