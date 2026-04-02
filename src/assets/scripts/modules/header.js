@@ -5,12 +5,11 @@ export function initHeader() {
   const mobileLink = document.querySelectorAll('.header__mobile-link');
   const logo = document.querySelector('.header__logo');
 
-  const getScrollRatio = () => Math.min(window.scrollY / 500, 1);
+  const getScrollRatio = () => Math.min(window.scrollY / 1000, 1);
   const updateHeaderOpacity = () => {
     const isMenuOpen = mobileNav.classList.contains('header__mobile-nav--open')
     if (isMenuOpen) return
     header.style.setProperty('--header-opacity', getScrollRatio())
-    header.style.setProperty('--header-fg', getScrollRatio())
   }
 
   let ticking = false;
@@ -33,7 +32,6 @@ export function initHeader() {
 
     if (isOpen) {
       header.style.setProperty('--header-opacity', 1);
-      header.style.setProperty('--header-fg', 1);
     } else {
       updateHeaderOpacity();
     }

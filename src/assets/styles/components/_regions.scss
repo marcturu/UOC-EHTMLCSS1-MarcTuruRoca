@@ -2,7 +2,8 @@
 @use '../tools/mixins' as m;
 
 .regions {
-  background-color: v.$color-background;
+  position: relative;
+  z-index: 1;
 
   &__title {
     margin-bottom: v.$spacing-sm;
