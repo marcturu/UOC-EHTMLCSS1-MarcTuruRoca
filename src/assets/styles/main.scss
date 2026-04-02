@@ -1,5 +1,6 @@
 @use "dependencies";
 
+@use "settings/fonts";
 @use "settings/variables";
 
 @use "tools/functions";
@@ -13,11 +14,17 @@
 @use "objects/section";
 
 @use "components/header";
-@use "components/footer";
+
+@use "components/intro";
 @use "components/hero";
 @use "components/featured";
+@use "components/regions";
+
 @use "components/recipe-card";
 @use "components/recipe-detail";
 @use "components/links";
+
+@use "components/footer";
+
 
 @use "utilities/helpers";

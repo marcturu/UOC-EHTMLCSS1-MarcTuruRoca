@@ -1,1 +1,169 @@
-// Hi
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.featured {
+  position: relative;
+  background-color: v.$color-white;
+
+  // Difuminado
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Difuminado superior
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, v.$color-background, v.$color-white);
+  }
+
+  // Difuminado inferior
+  &::after {
+    bottom: 0;
+    background: linear-gradient(to bottom, v.$color-white, v.$color-background);
+  }
+
+  .o-container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-md;
+
+    @include m.respond-to(md) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__cta {
+    text-align: center;
+  }
+}
+
+.recipe-card {
+  background-color: v.$color-background;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 0 4px f.color-alpha(v.$color-border, 0.6);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow:
+      0 0 12px f.color-alpha(v.$color-border, 0.5),
+      0 0 0 1px f.color-alpha(v.$color-border, 0.5);
+  }
+
+  &__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__image {
+    height: 220px;
+    overflow: hidden;
+
+    @include m.respond-to(md) {
+      height: 300px;
+    }
+
+    @include m.respond-to(lg) {
+      height: 450px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
+  }
+
+  &:hover &__image img {
+    transform: scale(1.1);
+  }
+
+  &__body {
+    padding: v.$spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-sm;
+  }
+
+  &__tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: v.$color-highlight;
+    text-shadow: 0 0 6px f.color-alpha(v.$color-highlight, 0.5);
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__desc {
+    line-height: 1.6rem;
+    color: f.color-alpha(v.$color-text, 0.75);
+    margin: 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$spacing-xs;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: v.$spacing-xs v.$spacing-sm;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &--primary {
+    background-color: v.$color-primary;
+    color: v.$color-white;
+
+    &:hover {
+      background-color: v.$color-secondary;
+      color: v.$color-white;
+      box-shadow: 0 0 20px f.color-alpha(v.$color-primary, 0.75);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+    }
+  }
+}

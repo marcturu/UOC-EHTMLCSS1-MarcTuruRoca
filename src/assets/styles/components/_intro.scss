@@ -1,0 +1,26 @@
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.intro {
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-md;
+
+    @include m.respond-to(md) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__text {
+    color: v.$color-text-muted;
+    max-width: 600px;
+    margin-bottom: v.$spacing-lg;
+  }
+}
