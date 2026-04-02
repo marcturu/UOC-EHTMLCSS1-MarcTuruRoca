@@ -100,6 +100,11 @@
       padding: v.$spacing-xl;
       gap: v.$spacing-md;
     }
+
+    @include m.respond-to(lg) {
+      padding: 10rem;
+      gap: v.$spacing-md;
+    }
   }
 
   &__pretitle {
@@ -185,6 +190,7 @@
 
     @include m.respond-to(md) {
       font-size: 1.5rem;
+      padding: v.$spacing-sm v.$spacing-md;
     }
 
     i {
@@ -194,7 +200,7 @@
     &:hover {
       background-color: v.$color-secondary;
       color: v.$color-white;
-      box-shadow: 0 0 20px f.color-alpha(v.$color-primary, 0.75);
+      box-shadow: 0 0 20px f.color-alpha(v.$color-secondary, 0.25);
     }
 
     &:focus-visible {

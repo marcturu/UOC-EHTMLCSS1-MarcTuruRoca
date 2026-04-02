@@ -5,6 +5,7 @@
 .featured {
   position: relative;
   background-color: v.$color-white;
+  padding-top: 0;
 
   // Difuminado
   &::before,
@@ -99,12 +100,12 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      transition: transform 0.4s ease;
+      transition: transform 0.25s ease;
     }
   }
 
   &:hover &__image img {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   &__body {
@@ -121,7 +122,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: v.$color-highlight;
-    text-shadow: 0 0 6px f.color-alpha(v.$color-highlight, 0.5);
+    text-shadow: 0 0 10px f.color-alpha(v.$color-highlight, 0.75);
   }
 
   &__title {
@@ -157,7 +158,7 @@
     &:hover {
       background-color: v.$color-secondary;
       color: v.$color-white;
-      box-shadow: 0 0 20px f.color-alpha(v.$color-primary, 0.75);
+      box-shadow: 0 0 20px f.color-alpha(v.$color-secondary, 0.25);
       transform: translateY(-2px);
     }
 

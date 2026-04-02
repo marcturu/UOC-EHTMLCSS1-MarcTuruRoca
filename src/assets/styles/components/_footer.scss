@@ -48,12 +48,6 @@
       border-radius: 2px;
     }
 
-    &__tagline {
-      font-size: 0.875rem;
-      color: f.color-alpha(v.$color-background, 0.7);
-      margin: 0;
-    }
-
     &__nav {
       ul {
         display: flex;

@@ -57,10 +57,7 @@
     align-items: center;
     gap: v.$spacing-xs;
     text-decoration: none;
-    font-family: v.$font-primary;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: v.$color-text;
+    transition: transform 0.3s ease;
 
     i {
       color: v.$color-primary;
@@ -68,13 +65,25 @@
     }
 
     &:hover {
-      color: v.$color-primary;
+      transform: scale(1.1);
     }
 
     &:focus-visible {
       outline: 3px solid v.$color-primary;
       outline-offset: 4px;
       border-radius: 2px;
+    }
+  }
+
+  &__logo-img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+    &:hover {
+      transform: rotate(360deg);
     }
   }
 
