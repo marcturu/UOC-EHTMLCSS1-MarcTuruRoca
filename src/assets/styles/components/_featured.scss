@@ -6,36 +6,33 @@
   position: relative;
   background-color: v.$color-white;
 
-  // Difuminado superior
-  &::before {
+  // Difuminado
+  &::before,
+  &::after {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: 120px;
-    background: linear-gradient(
-      to bottom,
-      v.$color-background,
-      v.$color-white
-    );
     pointer-events: none;
+    z-index: 0;
+  }
+
+  // Difuminado superior
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, v.$color-background, v.$color-white);
   }
 
   // Difuminado inferior
   &::after {
-    content: '';
-    position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    background: linear-gradient(
-      to bottom,
-      v.$color-white,
-      v.$color-background
-    );
-    pointer-events: none;
+    background: linear-gradient(to bottom, v.$color-white, v.$color-background);
+  }
+
+  .o-container {
+    position: relative;
+    z-index: 1;
   }
 
   &__title {
@@ -43,7 +40,7 @@
     font-weight: 700;
     line-height: 1.2;
     color: v.$color-text;
-    margin-bottom: v.$spacing-sm;
+    margin-bottom: v.$spacing-md;
 
     @include m.respond-to(md) {
       font-size: 2.5rem;
@@ -158,8 +155,9 @@
     color: v.$color-white;
 
     &:hover {
-      background-color: v.$color-text;
+      background-color: v.$color-secondary;
       color: v.$color-white;
+      box-shadow: 0 0 20px f.color-alpha(v.$color-primary, 0.75);
       transform: translateY(-2px);
     }
 

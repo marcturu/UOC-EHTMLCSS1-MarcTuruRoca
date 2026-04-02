@@ -5,6 +5,11 @@
   position: relative;
   z-index: 1;
 
+  .o-container {
+    padding-top: v.$spacing-md;
+    border-top: 1px solid v.$color-border;
+  }
+  
   &__title {
     margin-bottom: v.$spacing-sm;
   }
@@ -12,7 +17,7 @@
   &__intro {
     color: v.$color-text-muted;
     max-width: 600px;
-    margin-bottom: v.$spacing-lg;
+    margin-bottom: v.$spacing-md;
   }
 
   &__list {
