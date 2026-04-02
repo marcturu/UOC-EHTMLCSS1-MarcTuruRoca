@@ -41,20 +41,18 @@ export function initHeader() {
 
   /* Cerrar menú mobile al hacer click en un link */
   mobileLink.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault()
-      const target = link.getAttribute('href')
+    link.addEventListener('click', () => {
 
       mobileNav.classList.remove('header__mobile-nav--open')
       menuBtn.setAttribute('aria-expanded', false);
       menuBtn.querySelector('i').className = 'fas fa-bars';
+      updateHeaderOpacity();
 
       window.scrollTo({
         top: document.querySelector(target).offsetTop,
         behavior: 'smooth'
       })
       
-      updateHeaderOpacity();
     })
   })
 
