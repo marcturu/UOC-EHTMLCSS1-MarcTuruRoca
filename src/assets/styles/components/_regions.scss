@@ -1,0 +1,53 @@
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+
+.regions {
+  position: relative;
+  z-index: 1;
+
+  .o-container {
+    padding-top: v.$spacing-md;
+    border-top: 1px solid v.$color-border;
+  }
+  
+  &__title {
+    margin-bottom: v.$spacing-sm;
+  }
+
+  &__intro {
+    color: v.$color-text-muted;
+    max-width: 600px;
+    margin-bottom: v.$spacing-md;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: v.$spacing-sm;
+
+    i {
+      color: v.$color-primary;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    p {
+      color: v.$color-text-muted;
+      margin: 0;
+    }
+  }
+
+  &__item-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: v.$color-text;
+  }
+}

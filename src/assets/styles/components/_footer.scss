@@ -1,0 +1,87 @@
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.footer {
+  background-color: v.$color-text;
+  color: v.$color-background;
+  padding-block: v.$spacing-lg;
+  margin-top: v.$spacing-lg;
+
+  &__container {
+    max-width: v.$container-max-width;
+    margin-inline: auto;
+    padding-inline: v.$container-padding;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.$spacing-md;
+
+    @include m.respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+
+      > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        justify-content: center;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    text-decoration: none;
+    color: v.$color-background;
+    font-family: v.$font-primary;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: v.$spacing-sm;
+
+    i {
+      color: v.$color-primary;
+    }
+
+    &:hover {
+      color: v.$color-primary;
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    &__nav {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: v.$spacing-xs;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: v.$color-background;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: v.$color-primary;
+      }
+
+      &:focus-visible {
+        outline: 3px solid v.$color-primary;
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+    }
+
+    &__copy {
+      font-size: 0.8rem;
+      color: f.color-alpha(v.$color-background, 0.6);
+      margin: 0;
+    }
+  }
+}

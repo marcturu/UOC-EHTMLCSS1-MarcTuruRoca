@@ -1,3 +1,28 @@
+@use '../settings/variables' as v;
+
 body {
+  font-family: v.$font-secondary;
   font-size: 1rem;
+  line-height: 1.6;
+  color: v.$color-text;
+  background-color: v.$color-background;
+  min-height: 100vh;
+}  
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: v.$font-primary;
+  line-height: 1.2;
+}
+
+a {
+  color: v.$color-primary;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: v.$color-secondary;
+  }
+}
+
+p {
+  margin-bottom: v.$spacing-sm;
 }

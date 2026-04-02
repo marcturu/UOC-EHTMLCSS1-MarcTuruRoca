@@ -1,7 +1,13 @@
 {
   "name": "uoc-ehtmlcss1-marctururoca",
   "version": "1.0.0",
-  "source": "src/index.html",
+  "source": [
+    "src/index.html",
+    "src/categoria.html",
+    "src/det1.html",
+    "src/det2.html",
+    "src/links.html"
+  ],
   "browserslist": "last 10 years",
   "scripts": {
     "parcel:dev": "parcel",
@@ -17,7 +23,9 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.16.4",
     "@parcel/transformer-sass": "^2.16.4",
+    "@parcel/transformer-webmanifest": "^2.16.4",
     "npm-run-all": "^4.1.5",
     "parcel": "^2.16.4",
     "posthtml-include": "^2.0.1",
