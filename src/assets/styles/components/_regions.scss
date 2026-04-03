@@ -4,6 +4,7 @@
 .regions {
   position: relative;
   z-index: 1;
+  margin-bottom: v.$spacing-lg;
 
   .o-container {
     padding-top: v.$spacing-md;
