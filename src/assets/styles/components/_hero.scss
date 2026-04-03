@@ -261,9 +261,11 @@
   text-align: center;
   display: block;
   background-color: v.$color-background;
+  min-height: auto;
 
   .hero__content {
     align-items: center;
+    padding: 0;
     padding-block: 6rem v.$spacing-md;
     gap: 0;
     
@@ -308,8 +310,12 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 300px;
+    max-height: 300px;
     overflow: hidden;
+    
+    @include m.respond-to(md) {
+      margin-bottom: v.$spacing-lg;
+    }
 
     img {
       width: 100%;
@@ -320,4 +326,50 @@
       border-radius: 0.75rem;
     }
   } 
+}
+
+.hero--links {
+  min-height: 0;
+  text-align: center;
+  background-color: v.$color-background;
+
+  @include m.respond-to(sm) {
+    min-height: 0;
+  }
+
+  @include m.respond-to(md) {
+    min-height: 0;
+  }
+
+  .hero__content {
+    padding-block: v.$spacing-xl 0;
+
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
+
+     @include m.respond-to(sm) {
+      font-size: 2.5rem;
+    }
+
+    @include m.respond-to(md) {
+      font-size: 3.25rem;;
+    }
+
+    @include m.respond-to(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  .hero__pretitle {
+    font-size: 1rem;
+    color: v.$color-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
 }

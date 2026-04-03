@@ -13,6 +13,7 @@
 @use "objects/container";
 @use "objects/section";
 
+
 @use "components/header";
 
 @use "components/intro";
@@ -21,7 +22,9 @@
 @use "components/regions";
 
 @use "components/recipe-list";
+
 @use "components/recipe-detail";
+
 @use "components/links";
 
 @use "components/footer";
