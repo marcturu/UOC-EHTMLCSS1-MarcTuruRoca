@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  padding-block: v.$spacing-sm;
+  padding-top: v.$spacing-sm;
   color: v.$color-text;
   --header-opacity: 0;
   --border-opacity: 0;
@@ -27,7 +27,7 @@
 
   &__skip-link {
     position: absolute;
-    top: -100%;
+    top: -3rem;
     left: v.$container-padding;
     background-color: v.$color-primary;
     color: v.$color-white;
