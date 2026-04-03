@@ -1,1 +1,193 @@
-// Hi
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.detail {
+  position: relative;
+  background-color: v.$color-white;
+  
+
+  @include m.respond-to(md) {
+    padding-top: 0;
+  }
+  // Difuminado superior
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 0;
+    top: 0;
+    background: linear-gradient(to bottom, v.$color-background, v.$color-white);
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+    align-items: center;
+
+    &--text-right {
+      flex-direction: column-reverse;
+    }
+
+    @include m.respond-to(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      
+       &--text-right {
+        flex-direction: initial;
+
+        .detail__figure {
+          order: initial;
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    @include m.respond-to(md) {
+      gap: v.$spacing-xs;
+    }
+
+    p {
+      color: v.$color-text-muted;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    strong {
+      color: v.$color-primary;
+      font-weight: 700;
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+
+  &__subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-sm;
+    text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
+  }
+
+  &__figure {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.5);
+
+    .figure-inner {
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+
+      @include m.respond-to(md) {
+        max-height: 360px;
+      }
+
+      @include m.respond-to(lg) {
+        max-height: 420px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.025);
+      }
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      color: v.$color-text-muted;
+      padding: v.$spacing-xs 0 0;
+      margin-top: v.$spacing-xs;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
+  &__video {
+    margin-bottom: v.$spacing-lg;
+
+    .detail__subtitle {
+      margin-bottom: v.$spacing-md;
+    }
+  }
+
+  &__video-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    padding-bottom: 56.25%;
+    height: 0;
+    box-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.5);
+  
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: v.$spacing-md;
+    border-top: 1px solid v.$color-border;
+    gap: v.$spacing-sm;
+    flex-wrap: wrap;
+  }
+
+  &__nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    padding: v.$spacing-xs v.$spacing-sm;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease, gap 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: v.$color-white;
+      background-color: v.$color-secondary;
+      box-shadow: 0 0 20px f.color-alpha(v.$color-secondary, 0.25);
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+}

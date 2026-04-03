@@ -88,7 +88,7 @@
     align-items: center;
     justify-content: center;
     padding-inline: v.$container-padding;
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
     padding: 6rem;
     gap: v.$spacing-sm;
@@ -99,7 +99,7 @@
     }
 
     @include m.respond-to(md) {
-      padding: v.$spacing-lg;
+      padding: v.$spacing-xl;
       gap: v.$spacing-sm;
     }
 
@@ -223,7 +223,7 @@
   } 
 }
 
-.hero--simple {
+.hero--category {
   padding-top: v.$spacing-xl;
   min-height: 0;
   text-align: center;
@@ -234,17 +234,135 @@
     font-weight: 700;
     color: v.$color-text;
     margin-bottom: v.$spacing-md;
+    text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
 
     @include m.respond-to(sm) {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
 
     @include m.respond-to(md) {
-      font-size: 3.75rem;
+      font-size: 3.25rem;;
     }
 
     @include m.respond-to(lg) {
-      font-size: 4.5rem;
+      font-size: 4rem;
+    }
+  }
+
+  .hero__pretitle {
+    font-size: 1rem;
+    color: v.$color-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+}
+
+.hero--detail {
+  text-align: center;
+  display: block;
+  background-color: v.$color-background;
+  min-height: auto;
+
+  .hero__content {
+    align-items: center;
+    padding: 0;
+    padding-block: 6rem v.$spacing-md;
+    gap: 0;
+    
+    @include m.respond-to(md) {
+      padding-block: v.$spacing-xl 0;
+    }
+
+    .hero__tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: v.$color-secondary;
+      margin-bottom: v.$spacing-xs;
+      text-shadow: 0 0 10px f.color-alpha(v.$color-highlight, 0.75);
+    }
+
+    .hero__title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: v.$color-text;
+      margin-bottom: 0;
+      text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
+
+      @include m.respond-to(sm) {
+        font-size: 2.5rem;
+        margin-bottom: v.$spacing-md;
+      }
+
+      @include m.respond-to(md) {
+        font-size: 3rem;;
+      }
+
+      @include m.respond-to(lg) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .hero__image-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    
+    @include m.respond-to(md) {
+      margin-bottom: v.$spacing-lg;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border-radius: 0.75rem;
+    }
+  } 
+}
+
+.hero--links {
+  min-height: 0;
+  text-align: center;
+  background-color: v.$color-background;
+
+  @include m.respond-to(sm) {
+    min-height: 0;
+  }
+
+  @include m.respond-to(md) {
+    min-height: 0;
+  }
+
+  .hero__content {
+    padding-block: v.$spacing-xl 0;
+
+  }
+
+  .hero__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: 0;
+    text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
+
+     @include m.respond-to(sm) {
+      font-size: 2.5rem;
+    }
+
+    @include m.respond-to(md) {
+      font-size: 3.25rem;;
+    }
+
+    @include m.respond-to(lg) {
+      font-size: 4rem;
     }
   }
 
