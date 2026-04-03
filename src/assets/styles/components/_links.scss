@@ -1,1 +1,152 @@
-// Hi
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
+@use '../tools/functions' as f;
+
+.links {
+  background-color: v.$color-background;
+
+  &__notice {
+    display: flex;
+    gap: v.$spacing-sm;
+    align-items: flex-start;
+    background-color: f.color-alpha(v.$color-accent, 0.08);
+    border-left: 4px solid v.$color-accent;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: v.$spacing-md;
+    margin-bottom: v.$spacing-lg;
+
+    p {
+      color: v.$color-text-muted;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    strong {
+      color: v.$color-text;
+    }
+  }
+
+  &__notice-icon {
+    color: v.$color-accent;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+
+  &__notice-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-xs;
+  }
+
+  &__section {
+    margin-bottom: v.$spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    display: flex;
+    align-items: center;
+    gap: v.$spacing-xs;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: v.$color-text;
+    margin-bottom: v.$spacing-md;
+    padding-bottom: v.$spacing-xs;
+    border-bottom: 2px solid v.$color-primary;
+
+    i {
+      color: v.$color-primary;
+      font-size: 1rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-sm;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: v.$spacing-xs;
+    padding: v.$spacing-sm;
+    background-color: v.$color-background;
+    border-radius: 0.5rem;
+    border: 1px solid v.$color-border;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    @include m.respond-to(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &:hover {
+      border-color: v.$color-primary;
+      box-shadow: 0 2px 12px f.color-alpha(v.$color-primary, 0.08);
+    }
+  }
+
+  &__item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: v.$color-text;
+  }
+
+  &__item-desc {
+    font-size: 0.85rem;
+    color: v.$color-text-muted;
+    line-height: 1.5;
+  }
+
+  &__item-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: v.$color-primary;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid v.$color-primary;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    align-self: flex-start;
+
+    @include m.respond-to(md) {
+      align-self: center;
+    }
+
+    i {
+      font-size: 0.7rem;
+    }
+
+    &:hover {
+      background-color: v.$color-primary;
+      color: v.$color-white;
+    }
+
+    &:focus-visible {
+      outline: 3px solid v.$color-primary;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+  }
+}
