@@ -18,7 +18,16 @@ export function initHeader() {
     
     const scrollRatio = getScrollRatio()
     header.style.setProperty('--header-opacity', scrollRatio)
-    header.style.setProperty('--border-opacity', isHome ? scrollRatio : 1)
+
+    const isMobile = window.innerWidth < 768;
+    if (isHome && !isMobile) {
+      header.style.setProperty('--border-opacity', scrollRatio);
+    } else if (!isHome && !isMobile) {
+      header.style.setProperty('--border-opacity', 1);
+    } else {
+      header.style.setProperty('--border-opacity', scrollRatio);
+    }
+    //header.style.setProperty('--border-opacity', isHome ? scrollRatio : 1)
   }
 
   updateHeaderOpacity();
