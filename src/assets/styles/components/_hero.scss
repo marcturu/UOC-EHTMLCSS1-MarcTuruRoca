@@ -223,7 +223,7 @@
   } 
 }
 
-.hero--simple {
+.hero--category {
   padding-top: v.$spacing-xl;
   min-height: 0;
   text-align: center;
@@ -234,6 +234,7 @@
     font-weight: 700;
     color: v.$color-text;
     margin-bottom: v.$spacing-md;
+    text-shadow: 0 0 10px f.color-alpha(v.$color-text, 0.25);
 
     @include m.respond-to(sm) {
       font-size: 2.5rem;
