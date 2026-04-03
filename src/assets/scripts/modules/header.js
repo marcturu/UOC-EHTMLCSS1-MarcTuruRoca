@@ -8,7 +8,7 @@ export function initHeader() {
   const mobileLink = document.querySelectorAll('.header__mobile-link');
   const logo = document.querySelector('.header__logo');
 
-  const isHome = ['/', '/index.html', 'index'].includes(window.location.pathname);
+  const isHome = ['/', '/index.html', '/index'].includes(window.location.pathname);
 
   const getScrollRatio = () => Math.min(window.scrollY / 1000, 1);
 
@@ -18,7 +18,16 @@ export function initHeader() {
     
     const scrollRatio = getScrollRatio()
     header.style.setProperty('--header-opacity', scrollRatio)
-    header.style.setProperty('--border-opacity', isHome ? scrollRatio : 1)
+
+    const isMobile = window.innerWidth < 768;
+    if (isHome && !isMobile) {
+      header.style.setProperty('--border-opacity', scrollRatio);
+    } else if (!isHome && !isMobile) {
+      header.style.setProperty('--border-opacity', 1);
+    } else {
+      header.style.setProperty('--border-opacity', scrollRatio);
+    }
+    //header.style.setProperty('--border-opacity', isHome ? scrollRatio : 1)
   }
 
   updateHeaderOpacity();
