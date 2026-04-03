@@ -65,6 +65,7 @@ src/
 │   ├── categoria/
 │   ├── det1/
 │   ├── det2/
+│   └── links/
 ├── assets/
 │   ├── fonts/              # Fuentes autoalojadas (Unbounded, DM Sans)
 │   ├── images/             
