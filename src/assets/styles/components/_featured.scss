@@ -132,6 +132,7 @@
   }
 
   &__desc {
+    text-align: justify;
     line-height: 1.6rem;
     color: f.color-alpha(v.$color-text, 0.75);
     margin: 0;
