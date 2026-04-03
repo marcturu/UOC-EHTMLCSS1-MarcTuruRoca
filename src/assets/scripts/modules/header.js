@@ -8,7 +8,7 @@ export function initHeader() {
   const mobileLink = document.querySelectorAll('.header__mobile-link');
   const logo = document.querySelector('.header__logo');
 
-  const isHome = ['/', '/index.html', 'index'].includes(window.location.pathname);
+  const isHome = ['/', '/index.html', '/index'].includes(window.location.pathname);
 
   const getScrollRatio = () => Math.min(window.scrollY / 1000, 1);
 
