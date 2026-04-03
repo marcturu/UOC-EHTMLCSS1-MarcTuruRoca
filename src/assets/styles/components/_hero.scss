@@ -88,7 +88,7 @@
     align-items: center;
     justify-content: center;
     padding-inline: v.$container-padding;
-    max-width: 1000px;
+    max-width: 1200px;
     width: 100%;
     padding: 6rem;
     gap: v.$spacing-sm;
@@ -99,7 +99,7 @@
     }
 
     @include m.respond-to(md) {
-      padding: v.$spacing-lg;
+      padding: v.$spacing-xl;
       gap: v.$spacing-sm;
     }
 
@@ -260,6 +260,7 @@
 .hero--detail {
   text-align: center;
   display: block;
+  background-color: v.$color-background;
 
   .hero__content {
     align-items: center;
@@ -276,7 +277,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: v.$color-highlight;
+      color: v.$color-secondary;
       margin-bottom: v.$spacing-xs;
       text-shadow: 0 0 10px f.color-alpha(v.$color-highlight, 0.75);
     }
@@ -294,7 +295,7 @@
       }
 
       @include m.respond-to(md) {
-        font-size: 3.25rem;;
+        font-size: 3rem;;
       }
 
       @include m.respond-to(lg) {
