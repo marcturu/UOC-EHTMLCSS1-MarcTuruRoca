@@ -7,7 +7,17 @@ export function initHeader() {
   const mobileNav = document.querySelector('.header__mobile-nav');
   const mobileLink = document.querySelectorAll('.header__mobile-link');
   const logo = document.querySelector('.header__logo');
+  const links = document.querySelectorAll('.header__nav-link');
+  const currentPath = window.location.pathname;
 
+  links.forEach(link => {
+    const linkPath = new URL(link.href).pathname;
+
+    if (linkPath === currentPath) {
+      link.setAttribute('aria-current', 'page');
+    }
+  });
+  
   const isHome = ['/', '/index.html', '/index'].includes(window.location.pathname);
 
   const getScrollRatio = () => Math.min(window.scrollY / 1000, 1);

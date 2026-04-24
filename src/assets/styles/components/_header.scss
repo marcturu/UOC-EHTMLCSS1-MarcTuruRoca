@@ -25,6 +25,10 @@
   );
   backdrop-filter: blur(calc(var(--header-opacity, 0) * 8px));
 
+  @include m.respond-to(md) {
+    padding-block: v.$spacing-sm;
+  }
+
   &__skip-link {
     position: absolute;
     top: -3rem;
@@ -82,8 +86,8 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
     @include m.respond-to(md) {
-      width: 4rem;
-      height: 4rem;
+      width: 4.5rem;
+      height: 4.5rem;
     }
 
     &:hover {
