@@ -7,5 +7,9 @@
   "png": {
     "compressionLevel": 9,
     "progressive": true
+  },
+  "webp": {
+    "quality": 25,
+    "effort": 6
   }
 }
