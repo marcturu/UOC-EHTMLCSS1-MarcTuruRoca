@@ -1,6 +1,6 @@
 {
   "jpeg": {
-    "quality": 30,
+    "quality": 70,
     "mozjpeg": true,
     "progressive": true
   },
@@ -9,7 +9,7 @@
     "progressive": true
   },
   "webp": {
-    "quality": 25,
+    "quality": 70,
     "effort": 6
   }
 }
