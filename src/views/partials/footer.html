@@ -3,12 +3,16 @@
     <div class="footer__brand">
       <a href="./index" class="footer__logo" aria-label="Saborea México - Inicio">
         <img 
-          src="./assets/images/SaboreaMexico.png?width=144&as=webp" 
+          src="./assets/images/SaboreaMexico.png?width=72&as=webp" 
+          srcset="
+            ./assets/images/SaboreaMexico.png?width=72&as=webp 1x,
+            ./assets/images/SaboreaMexico.png?width=144&as=webp 2x,
+            ./assets/images/SaboreaMexico.png?width=216&as=webp 3x
+          "
           alt="Saborea México logo"
           class="header__logo-img"
           width="72"
           height="72"
-          loading="eager"
           decoding="async"
         />
         <span>Saborea México</span>
@@ -16,7 +20,7 @@
     </div>
 
     <nav class="footer__nav" aria-label="Navegación del pie de página">
-      <ul class="role">
+      <ul role="list">
         <li><a href="./index" class="footer__link">Inicio</a></li>
         <li><a href="./categoria" class="footer__link">Recetas</a></li>
         <li><a href="./links" class="footer__link">Fuentes</a></li>

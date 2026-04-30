@@ -1,12 +1,40 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__bg" aria-hidden="true">
-    <img
-    class="hero__image" 
-      src="./assets/images/hero/hero.jpg?width=2400&as=webp" 
-      alt=""
-      width="1200"
-      height="700"
-    />
+    <picture>
+      <!-- Mobile (3:4 -> 0.75) -->
+      <source
+        media="(max-width: 480px)"
+        srcset="
+          ./assets/images/hero/hero-mobile.jpg?width=600&as=webp 600w,
+          ./assets/images/hero/hero-mobile.jpg?width=900&as=webp 900w
+        "
+        sizes="100vw"
+      />
+      <!-- Tablet (5:4 -> 1.25) -->
+      <source
+        media="(max-width: 1024px)"
+        srcset="
+          ./assets/images/hero/hero-tablet.jpg?width=900&as=webp 900w,
+          ./assets/images/hero/hero-tablet.jpg?width=1200&as=webp 1200w
+        "
+        sizes="100vw"
+      />
+      <!-- Desktop (3:2 -> 1.5) -->
+      <img
+        class="hero__image"
+        src="./assets/images/hero/hero.jpg?width=1200&as=webp"
+        srcset="
+          ./assets/images/hero/hero.jpg?width=1200&as=webp 1200w,
+          ./assets/images/hero/hero.jpg?width=1600&as=webp 1600w,
+          ./assets/images/hero/hero.jpg?width=1920&as=webp 1920w
+        "
+        alt=""
+        width="1200"
+        height="700"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </picture>
   </div>
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__content">
