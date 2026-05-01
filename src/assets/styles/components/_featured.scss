@@ -89,6 +89,16 @@
 
     @include m.respond-to(md) {
       height: 300px;
+      clip-path: polygon(
+        0% 8%,
+        80% 0%,
+        100% 12%,
+        100% 88%,
+        92% 100%,
+        12% 100%,
+        0% 92%
+      );
+      transition: clip-path 0.35s ease;
     }
 
     @include m.respond-to(lg) {
@@ -101,6 +111,20 @@
       object-fit: cover;
       object-position: center;
       transition: transform 0.25s ease;
+    }
+  }
+
+  &:hover &__image  {
+    @include m.respond-to(md) { 
+      clip-path: polygon(
+        0% 0%,
+        92% 0%,
+        100% 12%,
+        100% 100%,
+        92% 100%,
+        8% 100%,
+        0% 92%
+      );
     }
   }
 
