@@ -4,22 +4,39 @@
     <h1 class="hero__title" id="detail-hero-title">Tacos al Pastor</h1>
   </div>
   <div class="hero__image-wrapper o-container">
-    <img 
-      src="./assets/images/det1/tacos-hero.jpg?width=900&as=webp"
-      srcset="
-        ./assets/images/det1/tacos-hero.jpg?width=500&as=webp 500w,
-        ./assets/images/det1/tacos-hero.jpg?width=900&as=webp 900w,
-        ./assets/images/det1/tacos-hero.jpg?width=1200&as=webp 1200w
-      " 
-      sizes="
-        (max-width: 480px) 100vw,
-        (max-width: 1024px) 100vw,
-        1200px
-      "
-      alt="Tacos al Pastor"
-      width="1200"
-      height="300"
-      decoding="async"
-    />
+    <picture>
+      <!-- Mobile (3:4 -> 0.75) -->
+      <source
+        media="(max-width: 480px)"
+        srcset="
+          ./assets/images/det1/tacos-hero-mobile.jpg?width=480&as=webp 480w,
+          ./assets/images/det1/tacos-hero-mobile.jpg?width=768&as=webp 768w
+        "
+        sizes="100vw"
+      />
+      <!-- Tablet (5:4 -> 1.25) -->
+      <source
+        media="(max-width: 1024px)"
+        srcset="
+          ./assets/images/det1/tacos-hero-tablet.jpg?width=768&as=webp 768w,
+          ./assets/images/det1/tacos-hero-tablet.jpg?width=1024&as=webp 1024w
+        "
+        sizes="100vw"
+      />
+      <!-- Desktop (3:2 -> 1.5) -->
+      <img 
+        src="./assets/images/det1/tacos-hero.jpg?width=1024&as=webp"
+        srcset="
+          ./assets/images/det1/tacos-hero.jpg?width=1024&as=webp 1024w,
+          ./assets/images/det1/tacos-hero.jpg?width=1200&as=webp 1200w
+        " 
+        sizes="1200px"
+        alt="Tacos al Pastor con piña"
+        width="1200"
+        height="300"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </picture>
   </div>
 </section>
