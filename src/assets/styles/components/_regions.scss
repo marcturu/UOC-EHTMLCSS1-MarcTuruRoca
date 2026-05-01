@@ -1,5 +1,6 @@
 @use '../settings/variables' as v;
 @use '../tools/mixins' as m;
+@use '../tools/functions' as f;
 
 .regions {
   position: relative;
@@ -50,5 +51,61 @@
     font-weight: 700;
     margin-bottom: 0.25rem;
     color: v.$color-text;
+  }
+}
+
+.icon-location {
+  width: 40px;
+  height: 40px;
+  fill: v.$color-primary;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.regions__item:nth-child(1) .icon-location {
+  animation-name: float-1;
+}
+
+@keyframes float-1 {
+  0%, 33.33%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  16.66% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+.regions__item:nth-child(2) .icon-location {
+  animation-name: float-2;
+}
+
+@keyframes float-2 {
+  0%, 33.33%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  66.66%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.regions__item:nth-child(3) .icon-location {
+  animation-name: float-3;
+}
+
+@keyframes float-3 {
+  0%, 66.66% {
+    transform: translateY(0) rotate(0deg);
+  }
+  83.33% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
 }
