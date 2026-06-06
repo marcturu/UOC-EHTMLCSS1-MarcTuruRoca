@@ -34,6 +34,16 @@ Desarrollado como parte de la asignatura Herramientas HTML y CSS I del Máster U
 | [PostHTML](https://github.com/posthtml/posthtml) | Parciales HTML mediante `posthtml-include` |
 | [Stylelint](https://stylelint.io/) | Linting de SCSS con reglas personalizadas BEM y SCSS (`stylelint-config-prettier-scss`, `stylelint-config-recommended-scss`, `stylelint-scss`) configurado en `.stylelintrc` |
 
+### Optimización (build de producción)
+
+| Tecnología | Uso |
+| --- | --- |
+| [`lightningcss`](https://github.com/parcel-bundler/lightningcss) | Minificación y optimización de CSS (`@parcel/optimizer-css`) |
+| [`htmlnano`](https://github.com/posthtml/htmlnano) | Minificación de HTML (`@parcel/optimizer-htmlnano`) |
+| [SWC](https://swc.rs/) | Minificación de JavaScript (`@parcel/optimizer-swc`) |
+| [Babel](https://babeljs.io/) | Transpilación de JavaScript para navegadores antiguos (`@parcel/transformer-babel`) |
+| [`sharp`](https://sharp.pixelplumbing.com/) | Transformación de imágenes y conversión a WebP (`@parcel/transformer-image`) |
+
 ### Dependencias
 
 | Dependencia | Uso |
