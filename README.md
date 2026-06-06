@@ -41,7 +41,6 @@ Desarrollado como parte de la asignatura Herramientas HTML y CSS I del Máster U
 | [`lightningcss`](https://github.com/parcel-bundler/lightningcss) | Minificación y optimización de CSS (`@parcel/optimizer-css`) |
 | [`htmlnano`](https://github.com/posthtml/htmlnano) | Minificación de HTML (`@parcel/optimizer-htmlnano`) |
 | [SWC](https://swc.rs/) | Minificación de JavaScript (`@parcel/optimizer-swc`) |
-| [Babel](https://babeljs.io/) | Transpilación de JavaScript para navegadores antiguos (`@parcel/transformer-babel`) |
 | [`sharp`](https://sharp.pixelplumbing.com/) | Transformación de imágenes y conversión a WebP (`@parcel/transformer-image`) |
 
 ### Dependencias
